@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Jorge Calavia
+  namespace: calaviaorg
+  role_name: verifier
+  description: Common configuration checks
+  license: Apache-2.0
+  company: Calavia Org
+  min_ansible_version: "2.10"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+  galaxy_tags:
+    - verify
+
+dependencies: []
