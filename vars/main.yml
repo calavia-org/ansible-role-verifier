@@ -6,12 +6,3 @@ verifier_users:
     uid: 0
     group: 0
     home: '/root'
-
-  - name: 'nobody'
-    state: present
-    uid: 65534
-    group: 65534
-    home: '/root'
-
-  - name: 'nouser'
-    state: absent
