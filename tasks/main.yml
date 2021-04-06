@@ -1,0 +1,23 @@
+---
+# tasks file for ansible-role-verifier
+- name: "Register users with their states"
+  user:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  check_mode: True
+  loop: "{{ verifier_users }}"
+  loop_control:
+    label: "{{ item.name }}"
+  register: user_verifications
+
+- name: "Test users requirements"
+  assert:
+    quiet: yes
+    that:
+      - item.item.uid == item.uid
+      - item.item.group == item.group
+      - item.item.home == item.home
+  loop: "{{ user_verifications.results | flatten(levels=1) }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when: item.state == 'present'

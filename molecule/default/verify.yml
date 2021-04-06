@@ -1,0 +1,10 @@
+---
+# This playbook execute Ansible tests.
+- name: 'Verify'
+  hosts: all
+  tasks:
+
+    - name: "Test dummy"
+      assert:
+        that:
+          - 1 = 1

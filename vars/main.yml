@@ -1,0 +1,8 @@
+---
+# vars file for ansible-role-verifier
+verifier_users:
+  - name: 'root'
+    state: present
+    uid: 0
+    group: 0
+    home: '/root'

@@ -1,0 +1,10 @@
+---
+- name: Prepare 
+  hosts: all
+  become: yes
+  gather_facts: yes 
+
+  tasks:
+    - name: update_cache
+      apt:
+        update_cache: yes
