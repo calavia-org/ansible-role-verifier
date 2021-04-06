@@ -8,7 +8,7 @@ lint: |
 driver:
   name: docker
 platforms:
-  - name: "ubuntu20"
+  - name: "verifier-ubuntu-default"
     image: "calaviaorg/ubuntu-systemd:focal"
     command: /sbin/init
     volumes:
